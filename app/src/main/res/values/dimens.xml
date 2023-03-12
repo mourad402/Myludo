@@ -1,0 +1,45 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- Padding -->
+    <dimen name="paddingXXSmall">2dp</dimen>
+    <dimen name="paddingXSmall">4dp</dimen>
+    <dimen name="paddingSmall">8dp</dimen>
+    <dimen name="paddingSmallMedium">12dp</dimen>
+    <dimen name="paddingMedium">16dp</dimen>
+    <dimen name="paddingMediumLarge">24dp</dimen>
+    <dimen name="paddingLarge">32dp</dimen>
+    <dimen name="paddingXLarge">48dp</dimen>
+    <dimen name="paddingXXLarge">64dp</dimen>
+    <dimen name="paddingXXXLarge">88dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="marginNegativeLarge">-24dp</dimen>
+    <dimen name="marginNegativeMedium">-16dp</dimen>
+    <dimen name="marginNegativeXSmall">-4dp</dimen>
+    <dimen name="marginXXSmall">2dp</dimen>
+    <dimen name="marginXSmall">4dp</dimen>
+    <dimen name="marginSmall">8dp</dimen>
+    <dimen name="marginMediumSmall">12dp</dimen>
+    <dimen name="marginMedium">16dp</dimen>
+    <dimen name="marginXMedium">20dp</dimen>
+    <dimen name="marginMediumLarge">24dp</dimen>
+    <dimen name="marginLarge">32dp</dimen>
+    <dimen name="marginXLarge">48dp</dimen>
+    <dimen name="marginXXLarge">64dp</dimen>
+    <dimen name="marginXXXLarge">72dp</dimen>
+
+
+    <dimen name="very_small_radius">2.8dp</dimen>
+    <dimen name="small_radius">4dp</dimen>
+    <dimen name="mediumsmall_radius">6dp</dimen>
+    <dimen name="medium_radius">8dp</dimen>
+    <dimen name="x_medium_radius">10dp</dimen>
+    <dimen name="mediumlarge_radius">12dp</dimen>
+    <dimen name="big_radius">16dp</dimen>
+    <dimen name="very_big_radius">20dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>
