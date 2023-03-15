@@ -1,4 +1,4 @@
-package fr.app.myludo.ui.dashboard
+package fr.app.myludo.ui.collection
 
 import android.R
 import android.os.Bundle
@@ -11,11 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import fr.app.myludo.databinding.FragmentDashboardBinding
+import fr.app.myludo.databinding.FragmentCollectionBinding
 
-class DashboardFragment : Fragment() {
+class CollectionFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentCollectionBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,10 +26,10 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this)[DashboardViewModel::class.java]
+        val collectionViewModel =
+            ViewModelProvider(this)[CollectionViewModel::class.java]
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentCollectionBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val listView = binding.listView
@@ -47,8 +47,8 @@ class DashboardFragment : Fragment() {
         }
         listView.emptyView = emptyView
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textCollection
+        collectionViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

@@ -1,4 +1,4 @@
-package fr.app.myludo.ui.notifications
+package fr.app.myludo.ui.wishlist
 
 import android.R
 import android.os.Bundle
@@ -11,11 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import fr.app.myludo.databinding.FragmentNotificationsBinding
+import fr.app.myludo.databinding.FragmentWishlistBinding
 
-class NotificationsFragment : Fragment() {
+class WishlistFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentWishlistBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,10 +26,9 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val wishlistViewModel = ViewModelProvider(this)[WishlistViewModel::class.java]
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentWishlistBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val listView = binding.listView
@@ -47,8 +46,8 @@ class NotificationsFragment : Fragment() {
         }
         listView.emptyView = emptyView
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textWishlist
+        wishlistViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

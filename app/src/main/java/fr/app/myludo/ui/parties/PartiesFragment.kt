@@ -1,4 +1,4 @@
-package fr.app.myludo.ui.home
+package fr.app.myludo.ui.parties
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import fr.app.myludo.databinding.FragmentHomeBinding
+import fr.app.myludo.databinding.FragmentPartiesBinding
 import fr.app.myludo.ui.adapters.GamesAdapter
-import fr.app.myludo.ui.parties.PartiesViewModel
 
-class HomeFragment : Fragment() {
+class PartiesFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentPartiesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,7 +26,7 @@ class HomeFragment : Fragment() {
         val partiesViewModel =
             ViewModelProvider(this)[PartiesViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentPartiesBinding.inflate(inflater, container, false)
         val root: View = binding.root
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this

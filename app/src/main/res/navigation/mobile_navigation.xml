@@ -7,19 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="fr.app.myludo.ui.home.HomeFragment"
+        android:name="fr.app.myludo.ui.parties.PartiesFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="fr.app.myludo.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_collection"
+        android:name="fr.app.myludo.ui.collection.CollectionFragment"
+        android:label="@string/title_collection"
+        tools:layout="@layout/fragment_collection" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="fr.app.myludo.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_wishlist"
+        android:name="fr.app.myludo.ui.wishlist.WishlistFragment"
+        android:label="@string/title_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+
+    <fragment
+        android:id="@+id/navigation_parties"
+        android:name="fr.app.myludo.ui.parties.PartiesFragment"
+        android:label="@string/title_parties"
+        tools:layout="@layout/fragment_parties" />
 </navigation>

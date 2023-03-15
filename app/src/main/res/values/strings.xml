@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">MyLudo</string>
     <string name="title_home">Home</string>
+    <string name="title_collection">Collection</string>
+    <string name="title_wishlist">Wishlist</string>
+    <string name="title_parties">Parties</string>
     <string name="search_hint">Search</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
