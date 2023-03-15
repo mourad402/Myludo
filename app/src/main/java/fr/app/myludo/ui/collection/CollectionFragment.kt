@@ -1,17 +1,15 @@
 package fr.app.myludo.ui.collection
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import fr.app.myludo.databinding.FragmentCollectionBinding
+import fr.app.myludo.ui.adapters.GamesAdapter
+import fr.app.myludo.ui.collection.CollectionViewModel
 
 class CollectionFragment : Fragment() {
 
@@ -26,29 +24,20 @@ class CollectionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val collectionViewModel =
+        val partiesViewModel =
             ViewModelProvider(this)[CollectionViewModel::class.java]
 
         _binding = FragmentCollectionBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        binding.lifecycleOwner = this
 
-        val listView = binding.listView
-        val emptyView = binding.emptyView
-        val adapter = ArrayAdapter<Any?>(
-            requireContext(), R.layout.simple_list_item_1,
-                arrayOf(1, "a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a", 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 91, 2, 3, 4, 5, 6, 7, 8, 91, 2, 3, 4, 5, 6, 7, 8, 9)
-        )
-        listView.adapter = adapter
-        listView.onItemClickListener = AdapterView.OnItemClickListener { adapterView, _, i, _ ->
-            Toast.makeText(
-                requireContext(), adapterView.getItemAtPosition(i).toString(),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        listView.emptyView = emptyView
+        // Giving the binding access to the OverviewViewModel
+        binding.viewModel = partiesViewModel
+        binding.recyclerviewCollection.adapter = GamesAdapter ()
 
         val textView: TextView = binding.textCollection
-        collectionViewModel.text.observe(viewLifecycleOwner) {
+        partiesViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

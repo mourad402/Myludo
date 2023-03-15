@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import fr.app.myludo.databinding.FragmentHomeBinding
 import fr.app.myludo.ui.adapters.GamesAdapter
-import fr.app.myludo.ui.parties.PartiesViewModel
+import fr.app.myludo.ui.home.HomeViewModel
 
 class HomeFragment : Fragment() {
 
@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val partiesViewModel =
-            ViewModelProvider(this)[PartiesViewModel::class.java]
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
 
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = partiesViewModel
-        binding.recyclerviewGames.adapter = GamesAdapter ()
+        binding.recyclerviewHome.adapter = GamesAdapter ()
 
         val textView: TextView = binding.textHome
         partiesViewModel.text.observe(viewLifecycleOwner) {

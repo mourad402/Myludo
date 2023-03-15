@@ -33,9 +33,9 @@ class PartiesFragment : Fragment() {
 
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = partiesViewModel
-        binding.recyclerviewGames.adapter = GamesAdapter ()
+        binding.recyclerviewParties.adapter = GamesAdapter ()
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.textParties
         partiesViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

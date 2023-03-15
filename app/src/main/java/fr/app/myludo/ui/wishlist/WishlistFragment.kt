@@ -1,17 +1,15 @@
 package fr.app.myludo.ui.wishlist
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import fr.app.myludo.databinding.FragmentWishlistBinding
+import fr.app.myludo.ui.adapters.GamesAdapter
+import fr.app.myludo.ui.wishlist.WishlistViewModel
 
 class WishlistFragment : Fragment() {
 
@@ -26,28 +24,20 @@ class WishlistFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val wishlistViewModel = ViewModelProvider(this)[WishlistViewModel::class.java]
+        val partiesViewModel =
+            ViewModelProvider(this)[WishlistViewModel::class.java]
 
         _binding = FragmentWishlistBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        binding.lifecycleOwner = this
 
-        val listView = binding.listView
-        val emptyView = binding.emptyView
-        val adapter = ArrayAdapter<Any?>(
-            requireContext(), R.layout.simple_list_item_1,
-            arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-        )
-        listView.adapter = adapter
-        listView.onItemClickListener = AdapterView.OnItemClickListener { adapterView, _, i, _ ->
-            Toast.makeText(
-                requireContext(), adapterView.getItemAtPosition(i).toString(),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        listView.emptyView = emptyView
+        // Giving the binding access to the OverviewViewModel
+        binding.viewModel = partiesViewModel
+        binding.recyclerviewWishlist.adapter = GamesAdapter ()
 
         val textView: TextView = binding.textWishlist
-        wishlistViewModel.text.observe(viewLifecycleOwner) {
+        partiesViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

@@ -17,7 +17,7 @@
         tools:context=".ui.collection.CollectionFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_games"
+            android:id="@+id/recyclerview_parties"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:clipToPadding="false"
@@ -35,7 +35,7 @@
             tools:listitem="@layout/adapter_game" />
 
         <TextView
-            android:id="@+id/text_home"
+            android:id="@+id/text_parties"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
